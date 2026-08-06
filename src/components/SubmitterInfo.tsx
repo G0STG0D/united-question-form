@@ -122,8 +122,8 @@ export function SubmitterInfo({ errors }: Props) {
                             const ta = e.currentTarget;
                             if (
                                 (e.key === "Backspace" || e.key === "Delete") &&
-                                ta.selectionStart <= 1 &&
-                                ta.selectionEnd <= 1
+                                (ta.selectionStart ?? 2) <= 1 &&
+                                (ta.selectionEnd ?? 2) <= 1
                             ) {
                                 e.preventDefault();
                             }
